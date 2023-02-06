@@ -15,6 +15,6 @@ namespace Facturacion_API.Infraestructura.Servicios.Repositorios
             _context = dataContext;
         }
 
-        public List<Tercero> ListarClientes() => _context.Terceros.ToList();
+        public List<Tercero> ListarClientes() => _context.Terceros.OrderBy(c => c.Nombre).ToList();
     }
 }

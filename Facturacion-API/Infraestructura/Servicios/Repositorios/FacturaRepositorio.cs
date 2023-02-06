@@ -34,6 +34,7 @@ namespace Facturacion_API.Infraestructura.Servicios.Repositorios
                 .Include(f => f.CodterceroNavigation)
                 .Include(f => f.Detallefacturas)
                 .ThenInclude(d => d.CodproductoNavigation)
+                .OrderBy(f => f.Createdday)
                 .ToList();
         }
 

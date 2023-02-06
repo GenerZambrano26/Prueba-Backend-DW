@@ -18,7 +18,7 @@ namespace Facturacion_API.Infraestructura.Servicios.Repositorios
 
         public Producto BuscarProducto(Guid cod) => _context.Productos.Where(p => p.Cod == cod).FirstOrDefault();
 
-        public List<Producto> ListarProductos() => _context.Productos.ToList();
+        public List<Producto> ListarProductos() => _context.Productos.OrderBy(p => p.Descripcion).ToList();
 
         public void RestarCantidadProducto(Guid ProductoId, int cantidad)
         {
